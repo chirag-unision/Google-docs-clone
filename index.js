@@ -12,13 +12,9 @@ app.use(authRouter);
 
 const DB = "mongodb+srv://ranaayush0730:CVcu9UVH2NoaWEVx@cluster0.cm5rqnz.mongodb.net/?retryWrites=true&w=majority";
 
-// app.post('/api/signup', (req, res) => {
-
-// })
-
-// app.get('/api/get', (req, res) => {
-    
-// })
+app.post('/', (req, res) => {
+    return res.status(200).send('hello');
+})
 
 mongoose
 .connect(DB)

@@ -1,12 +1,10 @@
-const express = require("express");
+const authRouter = require("express").Router();
 const User = require("../models/user");
 
-const authRouter = express.Router();
-
-authRouter.post("api/signup", async (req, res) => {
-  console.log(req.body);
+authRouter.post("/api/signup", async (req, res) => {
     try {
         const {name, email, profilePic} = req.body;
+        console.log(name, email, profilePic);
          
         // how to check if User already exits in our database
       let user = await User.findOne({ email });
